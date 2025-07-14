@@ -1,0 +1,162 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Header Styles */
+header {
+    color: rgb(174, 44, 44);
+    text-align: center;
+    position: relative;
+    font-family: 'Courier New', Courier, monospace;
+    height: 50vh; /* 50% viewport height */
+    overflow: hidden;
+}                                                                                                                                                            
+
+.header-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-text {
+    position: relative;
+    color: #FFA500;
+    font-size: 1.5em;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    animation: wrapFlower 5s infinite, slideInDown 1s ease-in-out;
+}
+
+.header-text .gadgetzz {
+    color: #008000;
+}
+
+.hamburger-icon {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px; /* Adjust width as necessary */
+    height: 20px; /* Adjust height as necessary */
+}
+
+.hamburger-icon .bar {
+    width: 30px; /* Match the width of the icon */
+    height: 3px; /* Adjust height for bar thickness */
+    background-color: #333; /* Bar color */
+    border-radius: 3px; /* Rounded corners for bars */
+    transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+.hamburger-icon:hover .bar {
+    background-color: #555; /* Change color on hover */
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #444; /* Background color of the navbar */
+    position: fixed; /* Ensure it stays in place */
+    top: 30px; /* Position it directly under the header bar */
+    right: 0; /* Position it on the right side */
+    width: 70px; /* Reduced width of the sidebar */
+    height: calc(100vh - 30px); /* Full height minus header bar height */
+    transform: translateX(100%); /* Initially hidden */
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar-menu {
+    list-style: none; /* Remove default list styling */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Align menu items vertically */
+    flex-direction: column; /* Stack menu items vertically */
+    align-items: center; /* Center menu items horizontally */
+}
+
+.navbar-menu li {
+    margin: 0;
+}
+
+.navbar-menu a {
+    display: block;
+    width: 100%; /* Ensure links fit within sidebar */
+    padding: 10px 0; /* Adjust padding to fit text */
+    color: white; /* Text color of the navbar links */
+    text-decoration: none; /* Remove underline from links */
+    transition: background-color 0.3s ease, border-radius 0.3s ease; /* Smooth background color and border-radius transition */
+    border-radius: 30px; /* Pill-like shape */
+    text-align: center; /* Center text */
+    font-size: 12px; /* Adjust font size if necessary */
+}
+
+.navbar-menu a:hover {
+    background-color: #555; /* Background color on hover */
+    border-radius: 30px; /* Keep pill-like shape on hover */
+}
+
+/* Show the navbar */
+.navbar.show {
+    transform: translateX(0); /* Show sidebar */
+}
+
+/* Optional: Add a backdrop for better UX */
+.navbar.show::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(113, 190, 17, 0.5);
+    z-index: -1; /* Behind the navbar */
+}
+
+/* Weekly Deals Section */
+.weekly-deals-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.weekly-deals-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px; /* Space between grid items */
+    margin-top: 10px;
+}
+
+.product-item {
+    border: 1px solid #ddd; /* Add border */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Ensure no overflow */
+    transition: transform 0.3s; /* Smooth scaling effect */
+}
+
+.product-item:hover {
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+.product-item img {
+    width: 100%; /* Ensure images fill the item */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.product-caption {
+    padding: 10px;
+    font-size: 1em; /* Caption font size */
+    color: #444; /* Caption text color */
+}
